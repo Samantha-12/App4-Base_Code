@@ -6,8 +6,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
-Author 1
-Author 2
+Samantha Fisher
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -24,8 +23,140 @@ blah, blah, blah, blah
 -->
 
    <head> 
-      
-	   PUT YOUR OLD CODE IN HERE
+      <title>Flu or COVID-19?</title>  <!--Added a title to the app to display its purpose.-->
+      <meta name="viewport" content="width=device-width, initial-scale=1"> <!--This line and the next four lines were sourced from my code in APP 3.-->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
+<script>
+        var flu_count = 0; //var stands for variable- this is the flu variable //These two variables were sourced from my APP 3 code.
+        var COVID19_count = 0; //var stands for variable- this is the COVID-19 variable
+
+
+        function fluAdd(){ //everytime someone chooses a symptom that correlates to an flu symptom, a one will be added to the flu count //Sourced from my allergy add function in APP 3
+            flu_count = flu_count + 1;
+        }
+
+        function COVID19Add(){ //everytime someone chooses a symptom that correlates to a symptom of COVID-19, a one will be added to the COVID-19 count //Sourced from my cold add function in APP 3
+            COVID19_count = COVID19_count + 1;
+        }
+	
+	function Resultspercentage(){ //Added a function that will calculate the percentage of flu symptoms and percentage of COVID-19 symptoms
+	var resultText = document.getElementById("results"); //Demonstrates the content of my results paragraph
+	var fluPercent= (flu_count/4)*100; //Calculates the percentage of flu symptoms
+	var COVID19Percent= (COVID19_count/4)*100; //Calculates the percentate of COVID-19 symptoms
+	resultText.innerHTML = "Probability it is the flu =" + fluPercent + "%" + "<br> Probability it is COVID19 =" + COVID19Percent + "%"; //Calculates the probability of whether it is the flu or COVID-19
+	 }
+
+  </script>
+
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Flu or COVID-19?</h1> <!--Shows title of the app.-->
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Believe you have the flu or the Omnicron variant of COVID-19? Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> <!--Button directs survey to the first page with the first question.--> 
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+<div class="page" id="one"> 
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1> <!--Header that displays the survey is on question 1.-->
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Did you lose your sense of taste or smell?</p>  <!--Added the first question of the survey.--> 
+		<a href="#two" onclick="fluAdd();" class="w3-btn w3-black"> No</a> <!-- These next two lines are the buttons that will record the values on the variable. Buttons will take the survey to the second page with the second question.-->
+		<a href="#two" onclick="COVID19Add();" class="w3-btn w3-black"> Yes</a>
+    	</div><!--/content-->
+</div> <!--Added a division that signals the end of the division and of the current page.-->
+
+<div class="page" id="two"> <!--Sourced my content for page 2 from page 1.-->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1> <!--Header that displays the survey is on question 2.-->
+	</div>
+	
+	<div id="content" class="w3-container">
+	<p>Have you had diarrhea or been vomiting/ felt nauseous?</p> <!--The second question of the survey.-->
+		<a href="#three" onclick="fluAdd();" class="w3-btn w3-black"> Yes</a> <!-- These next two lines are the buttons that will record the values on the variable. Buttons will take the survey to the third page with the third question.-->
+		<a href="#three" onclick="COVID19Add();" class="w3-btn w3-black"> No</a> 
+	</div><!--/content-->
+</div> <!--Added a division that signals the end of the division and of the current page.-->
+	
+<div class="page" id="three"> <!--Added a division that produces a new page of the survey.--> <!--Sourced my content for page 3 from page 1.-->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1> <!--Header that displays the survey is on question 3.-->
+	</div>
+	
+	<div id="content" class="w3-container">
+	<p>Have you experienced shortness of breath or difficulty breathing?</p> <!--The third question of the survey.-->
+		<a href="#four" onclick="fluAdd();" class="w3-btn w3-black"> No</a> <!-- These next two lines are the buttons that will record the values on the variable. Buttons will take the survey to the fourth page with the fourth question.--->
+		<a href="#four" onclick="COVID19Add();" class="w3-btn w3-black"> Yes</a>
+	</div><!--/content-->
+</div> <!--Added a division that signals the end of the division and of the current page.-->
+	
+<div class="page" id="four"> <!--Added a division that produces a new page of the survey.--> <!--Sourced my content for page 4 from page 1.-->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1> <!--Header that displays the survey is on question 4.-->
+	</div>
+	
+	<div id="content" class="w3-container">
+	<p>Have you been sneezing more than normal?</p> <!--The fourth question of the survey.-->
+		<a href="#five" onclick="fluAdd();" class="w3-btn w3-black"> No</a> <!-- These next two lines are the buttons that will record the values on the variable.Buttons will take the survey to the fifth page with the results.-->
+		<a href="#five" onclick="COVID19Add();" class="w3-btn w3-black"> Yes</a>
+		
+	</div><!--/content-->
+</div> <!--Added a division that signals the end of the division and of the current page.-->
+	
+<div class="page" id="five"> <!--Added a division that produces a new page of the survey.--> <Sourced my content for page 5 from page 1.__>
+	<div class="w3-container w3-flat-carrot"> <!--Header of the fifth page.-->
+		<h1>Results</h1> <!--Header that displays the survey is on the results page.-->
+	</div> 
+	
+	<div id="content" class="w3-container">
+		<a onclick="Resultspercentage();" class="w3-btn w3-black"> Results</a> <!-- This button will run a function that shows the results of the survey.-->
+	<p id="results"></p> <!--Identifies where results are going to be displayed.-->
+	
+	</div>
+</div> <!--Added a division that signals the end of the division and of the current page.-->
+	
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+	   
 	   
    </body>
 </html>
