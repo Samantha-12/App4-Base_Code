@@ -21,13 +21,13 @@ blah, blah, blah,
 Known Issues:
 blah, blah, blah, blah
 
-https://www.w3schools.com/w3css/default.asp
+https://www.w3schools.com/w3css/default.asp <!--The next two lines are sourced from the top part of my code from APP 3.-->
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 
    <head> 
-      <title>Flu or COVID-19?</title>  <!--Added a title to the app to display its purpose.-->
-      <meta name="viewport" content="width=device-width, initial-scale=1"> <!--This line and the next four lines were sourced from my code in APP 3.-->
+      <title>Flu or COVID-19?</title>  <!--Added a title to the app to display its purpose of diagnosing between COVID-19 and the flu.-->
+      <meta name="viewport" content="width=device-width, initial-scale=1"> <!--This line and the next four lines were sourced from my code in APP 3. They serve to show that what I am coding is a web based app.-->
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
@@ -78,6 +78,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     left: 0vw;
     z-index: 1;
 }
+	img, object{ //This style will allow for a picture to be added and for the picture to be resized to an appropriate size
+               max-height:90%;
+               max-width:90%;
+        }
+
+
+	
 </style>
 
 <body>
@@ -93,8 +100,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+	
+	
 
-<div class="page" id="one"> 
+<div class="page" id="one"> <!--Division that signals the start of the second page with the first question.-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1> <!--Header that displays the survey is on question 1.-->
 	</div>
@@ -104,9 +113,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#two" onclick="fluAdd();" class="w3-btn w3-black"> No</a> <!-- These next two lines are the buttons that will record the values on the variable. Buttons will take the survey to the second page with the second question.-->
 		<a href="#two" onclick="COVID19Add();" class="w3-btn w3-black"> Yes</a>
     	</div><!--/content-->
-</div> <!--Added a division that signals the end of the division and of the current page.-->
+</div> <!--Added a division that signals the end of the first page and start of the second page.-->
 
-<div class="page" id="two"> <!--Sourced my content for page 2 from page 1.-->
+<div class="page" id="two"> <!--Sourced my content for page 2 from page 1. Division that signals the survey is on the second page with the second question.-->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1> <!--Header that displays the survey is on question 2.-->
 	</div>
@@ -116,9 +125,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#three" onclick="fluAdd();" class="w3-btn w3-black"> Yes</a> <!-- These next two lines are the buttons that will record the values on the variable. Buttons will take the survey to the third page with the third question.-->
 		<a href="#three" onclick="COVID19Add();" class="w3-btn w3-black"> No</a> 
 	</div><!--/content-->
-</div> <!--Added a division that signals the end of the division and of the current page.-->
+</div> <!--Added a division that signals the end of the second page and start of the third page.-->
 	
-<div class="page" id="three"> <!--Added a division that produces a new page of the survey.--> <!--Sourced my content for page 3 from page 1.-->
+<div class="page" id="three"> <!--Added a division that produces a new page of the survey.--> <!--Sourced my content for page 3 from page 1. Divison that signals the survey is on the third page with the third question.-->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1> <!--Header that displays the survey is on question 3.-->
 	</div>
@@ -128,9 +137,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#four" onclick="fluAdd();" class="w3-btn w3-black"> No</a> <!-- These next two lines are the buttons that will record the values on the variable. Buttons will take the survey to the fourth page with the fourth question.--->
 		<a href="#four" onclick="COVID19Add();" class="w3-btn w3-black"> Yes</a>
 	</div><!--/content-->
-</div> <!--Added a division that signals the end of the division and of the current page.-->
+</div> <!--Added a division that signals the end of the third page and start of the fourth page.-->
 	
-<div class="page" id="four"> <!--Added a division that produces a new page of the survey.--> <!--Sourced my content for page 4 from page 1.-->
+<div class="page" id="four"> <!--Added a division that produces a new page of the survey.--> <!--Sourced my content for page 4 from page 1. Division that signals the survey is on the fourth page with the fourth question.-->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1> <!--Header that displays the survey is on question 4.-->
 	</div>
@@ -141,9 +150,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#five" onclick="COVID19Add();" class="w3-btn w3-black"> Yes</a>
 		
 	</div><!--/content-->
-</div> <!--Added a division that signals the end of the division and of the current page.-->
+</div> <!--Added a division that signals the end of the fourth page and start of the fifth page.-->
 	
-<div class="page" id="five"> <!--Added a division that produces a new page of the survey.--> <Sourced my content for page 5 from page 1.__>
+<div class="page" id="five"> <!--Added a division that produces a new page of the survey.--> <Sourced my content for page 5 from page 1. Division that signals the start of the fifth page with the results.-->
 	<div class="w3-container w3-flat-carrot"> <!--Header of the fifth page.-->
 		<h1>Results</h1> <!--Header that displays the survey is on the results page.-->
 	</div> 
@@ -153,7 +162,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p id="results"></p> <!--Identifies where results are going to be displayed.-->
 	
 	</div>
-</div> <!--Added a division that signals the end of the division and of the current page.-->
+</div> <!--Added a division that signals the end the fifth page and end of the survey.-->
 	
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
