@@ -16,10 +16,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-The goal of the code is to create a web-based app that can tell you if you have a cold or allergies based on what symptoms you are experiencing. 
+The goal of the code is to create a web-based app that can tell you if you have the flu of COVID-19 based on what symptoms you are experiencing. 
 
 Known Issues:
-One known issue I enncountered was getting the results to show up on the results page. At first, there was just the results button and when you clicked it nothing showed up. I realized that my results function was missing a percentage sign. Another known issue was trying to figure out how to get my survey to transition to the next page. I realized that my problem was I had all of the buttons after the first page redirecting the survey back to the second page.
+One known issue I enncountered was getting the picture to show up on the first page. At first, there was just a box with a picture icon but no actual picture. I realized that I was using the wrong code for the image.  
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
@@ -35,11 +35,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-        var flu_count = 0; //var stands for variable- this is the flu variable //These two variables were sourced from my APP 3 code.
+        var flu_count = 0; //var stands for variable- this is the flu variable //These two variables were sourced from my APP 3 code
         var COVID19_count = 0; //var stands for variable- this is the COVID-19 variable
 
 
-        function fluAdd(){ //everytime someone chooses a symptom that correlates to an flu symptom, a one will be added to the flu count //Sourced from my allergy add function in APP 3
+        function fluAdd(){ //everytime someone chooses a symptom that correlates to a flu symptom, a one will be added to the flu count //Sourced from my allergy add function in APP 3
             flu_count = flu_count + 1;
         }
 
@@ -95,7 +95,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div id="content" class="w3-container">
 	<p>Believe you have the flu or the Omicron variant of COVID-19? Answer a few short questions to find out!</p>
 	 
-	<img src="https://www.fda.gov/files/covid19-1600x900.jpg"> <!--Base code for an image to show up on the first page.--> <!--Added the title of the image so that it will show up on the first page.--> <!--Added a width of 600 and a height of 400 so that the picture will have dimensions.-->. <!--Added a link to the image because the original base code I had did not produce the image.--> <!--Deleted the alt after the src, height, and width from my code to get the picture to show up.-->
+	<img src="https://www.fda.gov/files/covid19-1600x900.jpg"> <!--Base code for an image to show up on the first page.--> <!--Added the title of the image so that it will show up on the first page.--> <!--Added the size dimensions of a width of 600 and a height of 400.-->. <!--Added a link to the image because the original base code I had did not produce an image.--> <!--Deleted the alt after the src, height, and width from my code to get the picture to show up.--> <!--Deleted the size dimensions of the image.--> 
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> <!--Button directs survey to the first page with the first question.--> 
 	
@@ -105,7 +105,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	
 
-<div class="page" id="one"> <!--Division that signals the start of the first page with the first question.-->
+<div class="page" id="one"> <!--Added a division that produces a new page of the survey.--> <!--Division that signals the start of the first page with the first question.-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1> <!--Header that displays the survey is on question 1.-->
 	</div>
@@ -117,7 +117,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	</div><!--/content-->
 </div> <!--Added a division that signals the end of the first page and start of the second page.-->
 
-<div class="page" id="two"> <!--Sourced my content for page 2 from page 1. Division that signals the survey is on the second page with the second question.-->
+<div class="page" id="two"> <!--Added a division that produces a new page of the survey.--> <!--Sourced my content for page 2 from page 1. Division that signals the survey is on the second page with the second question.-->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1> <!--Header that displays the survey is on question 2.-->
 	</div>
@@ -148,7 +148,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 	<p>Have you been sneezing more than normal?</p> <!--The fourth question of the survey.-->
-		<a href="#five" onclick="fluAdd();" class="w3-btn w3-black"> No</a> <!-- These next two lines are the buttons that will record the values on the variable.Buttons will take the survey to the fifth page with the results.-->
+		<a href="#five" onclick="fluAdd();" class="w3-btn w3-black"> No</a> <!-- These next two lines are the buttons that will record the values on the variable. Buttons will take the survey to the fifth page with the results.-->
 		<a href="#five" onclick="COVID19Add();" class="w3-btn w3-black"> Yes</a>
 		
 	</div><!--/content-->
@@ -160,7 +160,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div> 
 	
 	<div id="content" class="w3-container">
-		<a onclick="Resultspercentage();" class="w3-btn w3-black"> Results</a> <!-- This button will run a function that shows the results of the survey.-->
+		<a onclick="Resultspercentage();" class="w3-btn w3-black"> Results</a> <!-- This button will run a function calculates the percentage of flu and COVID-19 symptoms and will produce the results of the survey.-->
 	<p id="results"></p> <!--Identifies where results are going to be displayed.-->
 	
 	</div>
